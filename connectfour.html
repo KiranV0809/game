@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="connectfour.css">
+    <script src="connectfour.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Connect Four</h1>
+    </header>
+    <main>
+        <p id="status">Player 1's Turn</p>
+        <div class="board" id="board"></div>
+        <button id="reset">Reset</button>
+    </main>
+
+    <dialog class="names-dialog">
+        <form>
+            <p class="title">Connect Four!</p>
+            <p class="player-name">
+                <label for="name1">Player 1's Name (Red):</label>
+                <input type="text" name="name1" id="name1" maxlength="15" required>
+            </p>
+            <p class="player-name">
+                <label for="name2">Player 2's Name (Yellow):</label>
+                <input type="text" name="name2" id="name2" maxlength="15" required>
+            </p>
+            <button type="submit">Start Game</button>
+        </form>
+    </dialog>
+
+    <dialog class="result-dialog">
+        <h1 id="result-message">Player Wins!</h1>
+        <button id="play-again">Play Again</button>
+    </dialog>
+
+    <footer>
+        <a href="index.html">Back to Tic Tac Toe</a>
+    </footer>
+</body>
+</html>
