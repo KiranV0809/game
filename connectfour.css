@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --LIGHT-COLOR: rgb(216, 200, 173);
+    --EXTRA-LIGHT-COLOR: rgb(230, 223, 210);
+}
+
+html { min-height: 100vh; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(211, 162, 88);
+    margin-bottom: 80px;
+    user-select: none;
+}
+
+header { padding-top: 30px; margin-bottom: 30px; }
+
+header h1 {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: min(90vw, 550px);
+    text-align: center;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    background-color: var(--LIGHT-COLOR);
+    color: #333;
+    border-radius: 20px;
+}
+
+header h1:hover { background-color: var(--EXTRA-LIGHT-COLOR); }
+
+main { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+
+#status {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-weight: 500;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+    background-color: #1a5ccc;
+    padding: 12px;
+    border-radius: 16px;
+    width: min(95vw, 500px);
+    aspect-ratio: 7 / 6;
+}
+
+.cell {
+    background-color: rgb(211, 162, 88);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.cell:hover { background-color: var(--EXTRA-LIGHT-COLOR); }
+.cell.p1 { background-color: #e63946; cursor: default; }
+.cell.p2 { background-color: #f7c948; cursor: default; }
+
+button {
+    font: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--LIGHT-COLOR);
+    cursor: pointer;
+}
+
+button:hover { background-color: var(--EXTRA-LIGHT-COLOR); }
+
+dialog { border: none; border-radius: 20px; padding: 50px 40px; text-align: center; }
+dialog::backdrop { background-color: rgba(0, 0, 0, 0.5); }
+
+.names-dialog form {
+    display: flex; flex-direction: column; gap: 25px;
+    align-items: center; width: min(80vw, 400px);
+}
+
+.names-dialog .title { font-size: 2rem; font-weight: 700; }
+
+.names-dialog .player-name {
+    display: flex; flex-direction: column; gap: 8px;
+    font-size: 1.1rem; font-weight: 500; width: 100%; text-align: left;
+}
+
+.names-dialog input {
+    padding: 8px; border: 2px solid #333;
+    border-radius: 5px; font-size: 1rem; font-family: inherit;
+}
+
+.result-dialog { display: flex; flex-direction: column; gap: 25px; align-items: center; }
+.result-dialog h1 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+
+footer { position: fixed; bottom: 15px; width: 100%; text-align: center; font-size: 1rem; }
+footer a { color: #333; text-decoration: none; font-weight: 500; }
+footer a:hover { text-decoration: underline; }
